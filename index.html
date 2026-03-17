@@ -6,48 +6,41 @@
 <title>Youssef FIHER — Data Scientist & Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
-
-
-
-
-
+<link rel="stylesheet" href="style.css?v=3">
 <style>
-/* ── COURSES RESPONSIVE (definitive) ── */
-#courses { overflow-x: hidden; }
-.courses-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.courses-table { min-width: 320px; border-collapse: collapse; }
+/* ── KEY FIX: hide course rows beyond first 3 ── */
+.course-row[data-hidden="true"] { display: none !important; }
+.course-hidden { display: none !important; }
 
+/* ── COURSES MOBILE ── */
 @media (max-width: 768px) {
   #courses { padding: 60px 4%; }
   .main-tabs { gap: 6px; margin-bottom: 24px; flex-wrap: wrap; }
   .tab-btn { padding: 8px 18px; font-size: 13px; }
   .sub-tabs { gap: 5px; margin-bottom: 20px; flex-wrap: wrap; }
   .sub-btn { padding: 5px 14px; font-size: 11px; }
-  .courses-table-wrap { border-radius: 10px; }
+  .courses-table-wrap { border-radius: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .courses-table { width: 100%; }
   .courses-table thead th { padding: 8px 10px; font-size: 9px; letter-spacing: .06em; }
-  .courses-table td { padding: 10px 10px; }
+  .courses-table td { padding: 10px; }
   .c-code { font-size: 10px; white-space: nowrap; }
   .c-name { font-size: 12px; line-height: 1.45; }
   .c-ects { font-size: 11px; }
-  .expand-btn { font-size: 11px; padding: 11px 12px; gap: 6px; }
+  .expand-btn { font-size: 11px; padding: 11px 12px; }
   .expand-chevron { width: 12px; height: 12px; }
 }
-
 @media (max-width: 480px) {
   #courses { padding: 50px 3%; }
-  .main-tabs { display: grid; grid-template-columns: 1fr 1fr; }
-  .tab-btn { font-size: 12px; padding: 8px 10px; text-align: center; justify-content: center; }
-  .sub-tabs { display: grid; grid-template-columns: repeat(3, 1fr); }
-  .sub-btn { font-size: 10px; padding: 5px 6px; text-align: center; }
+  .main-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .tab-btn { font-size: 12px; padding: 8px 10px; text-align: center; justify-content: center; width: 100%; }
+  .sub-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+  .sub-btn { font-size: 10px; padding: 6px 4px; text-align: center; width: 100%; }
   .courses-table thead th:nth-child(1),
   .courses-table td.c-code { display: none; }
-  .courses-table thead th:nth-child(2) { width: auto; padding-left: 12px; }
-  .courses-table thead th:nth-child(3) { width: 42px; }
-  .c-name { font-size: 12px; padding-left: 12px !important; }
+  .courses-table thead th:nth-child(2) { width: auto; padding-left: 14px; }
+  .courses-table thead th:nth-child(3) { width: 40px; }
+  .c-name { font-size: 12px; padding-left: 14px !important; }
   .c-ects { font-size: 12px; }
-  .expand-btn { font-size: 10px; letter-spacing: .03em; }
 }
 </style>
 </head>
@@ -106,7 +99,7 @@
       <div class="hero-card-name">Youssef FIHER</div>
       <div class="hero-card-sub">Namur, Belgium 🇧🇪</div>
       <div class="hero-tags">
-        <span class="tag">Python</span><span class="tag teal">Data Science</span><span class="tag purple">ML</span><span class="tag">Angular</span><span class="tag teal">Power BI</span><span class="tag">SQL</span><span class="tag teal">Big data</span>
+        <span class="tag">Python</span><span class="tag teal">Data Science</span><span class="tag purple">ML</span><span class="tag">Angular</span><span class="tag teal">Power BI</span><span class="tag">SQL</span>
       </div>
       <div class="social-row">
         <a href="https://www.linkedin.com/in/youssef-fiher-a21105302" target="_blank" class="social-link" title="LinkedIn">
@@ -171,91 +164,67 @@
         <button class="sub-btn" data-sub="b3">Bloc 3</button>
       </div>
       <div id="sub-b1" class="sub-panel active">
-        <div class="courses-table-wrap">
-          <table class="courses-table">
-            <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
-            <tbody>
-              <tr class="course-row" data-panel="b1"><td class="c-code">ECGEB170</td><td class="c-name">Faits et décisions économiques</td><td class="c-ects">6</td></tr>
-              <tr class="course-row" data-panel="b1"><td class="c-code">IELVB112</td><td class="c-name">Anglais 1 (niveau B1+)</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b1"><td class="c-code">INFOB112</td><td class="c-name">Introduction à la sociologie</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB114</td><td class="c-name">Sciences religieuses</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB123</td><td class="c-name">Algèbre (1re partie)</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB124</td><td class="c-name">Analyse mathématique (1re partie)</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB125</td><td class="c-name">Fondements mathématiques (1re partie)</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB126</td><td class="c-name">Fonctions et concepts des ordinateurs</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB127</td><td class="c-name">Analyse mathématique (2e partie)</td><td class="c-ects">2</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB131</td><td class="c-name">Introduction à la programmation</td><td class="c-ects">10</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB132</td><td class="c-name">Projet de programmation</td><td class="c-ects">4</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB133</td><td class="c-name">Systèmes d'information : étude de cas</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB134</td><td class="c-name">Communication et négociation dans les TIC</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b1" data-hidden="true"><td class="c-code">INFOB135</td><td class="c-name">Bases de données (1re partie)</td><td class="c-ects">5</td></tr>
-              <tr id="expand-b1"><td colspan="3" style="padding:0">
-                <button class="expand-btn" onclick="expandCourses('b1', 14)">
-                  <span class="expand-label-en">Show 11 more courses</span>
-                  <span class="expand-label-fr" style="display:none">Afficher 11 cours de plus</span>
-                  <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </button>
-              </td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="courses-table-wrap"><table class="courses-table">
+          <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
+          <tbody>
+            <tr class="course-row" data-panel="b1"><td class="c-code">ECGEB170</td><td class="c-name">Faits et décisions économiques</td><td class="c-ects">6</td></tr>
+            <tr class="course-row" data-panel="b1"><td class="c-code">IELVB112</td><td class="c-name">Anglais 1 (niveau B1+)</td><td class="c-ects">3</td></tr>
+            <tr class="course-row" data-panel="b1"><td class="c-code">INFOB112</td><td class="c-name">Introduction à la sociologie</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB114</td><td class="c-name">Sciences religieuses</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB123</td><td class="c-name">Algèbre (1re partie)</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB124</td><td class="c-name">Analyse mathématique (1re partie)</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB125</td><td class="c-name">Fondements mathématiques (1re partie)</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB126</td><td class="c-name">Fonctions et concepts des ordinateurs</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB127</td><td class="c-name">Analyse mathématique (2e partie)</td><td class="c-ects">2</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB131</td><td class="c-name">Introduction à la programmation</td><td class="c-ects">10</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB132</td><td class="c-name">Projet de programmation</td><td class="c-ects">4</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB133</td><td class="c-name">Systèmes d'information : étude de cas</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB134</td><td class="c-name">Communication et négociation dans les TIC</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b1" data-hidden="true"><td class="c-code">INFOB135</td><td class="c-name">Bases de données (1re partie)</td><td class="c-ects">5</td></tr>
+            <tr id="expand-b1"><td colspan="3" style="padding:0"><button class="expand-btn" onclick="expandCourses('b1',14)"><span class="expand-label-en">Show 11 more courses</span><span class="expand-label-fr" style="display:none">Afficher 11 cours de plus</span><svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button></td></tr>
+          </tbody>
+        </table></div>
       </div>
       <div id="sub-b2" class="sub-panel">
-        <div class="courses-table-wrap">
-          <table class="courses-table">
-            <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
-            <tbody>
-              <tr class="course-row" data-panel="b2"><td class="c-code">IELVB212</td><td class="c-name">Anglais 2 (niveau B1+ minimum)</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b2"><td class="c-code">IHDCB333</td><td class="c-name">Analyse de données</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b2"><td class="c-code">INFOB212</td><td class="c-name">Bases de données (2e partie)</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB215</td><td class="c-name">Introduction à la pensée philosophique</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB221</td><td class="c-name">Fondements mathématiques (2e partie)</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB222</td><td class="c-name">Algèbre (2e partie)</td><td class="c-ects">6</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB223</td><td class="c-name">Probabilités et statistique</td><td class="c-ects">6</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB224</td><td class="c-name">Intelligence artificielle et optimisation</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB231</td><td class="c-name">Systèmes d'exploitation</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB233</td><td class="c-name">Méthodes de programmation</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB234</td><td class="c-name">Conception et programmation orientée objet</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB236</td><td class="c-name">Projet de programmation</td><td class="c-ects">3</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB237</td><td class="c-name">Algorithmique</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b2" data-hidden="true"><td class="c-code">INFOB240</td><td class="c-name">Initiation à l'autoapprentissage (MOOC)</td><td class="c-ects">3</td></tr>
-              <tr id="expand-b2"><td colspan="3" style="padding:0">
-                <button class="expand-btn" onclick="expandCourses('b2', 14)">
-                  <span class="expand-label-en">Show 11 more courses</span>
-                  <span class="expand-label-fr" style="display:none">Afficher 11 cours de plus</span>
-                  <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </button>
-              </td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="courses-table-wrap"><table class="courses-table">
+          <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
+          <tbody>
+            <tr class="course-row" data-panel="b2"><td class="c-code">IELVB212</td><td class="c-name">Anglais 2 (niveau B1+ minimum)</td><td class="c-ects">3</td></tr>
+            <tr class="course-row" data-panel="b2"><td class="c-code">IHDCB333</td><td class="c-name">Analyse de données</td><td class="c-ects">5</td></tr>
+            <tr class="course-row" data-panel="b2"><td class="c-code">INFOB212</td><td class="c-name">Bases de données (2e partie)</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB215</td><td class="c-name">Introduction à la pensée philosophique</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB221</td><td class="c-name">Fondements mathématiques (2e partie)</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB222</td><td class="c-name">Algèbre (2e partie)</td><td class="c-ects">6</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB223</td><td class="c-name">Probabilités et statistique</td><td class="c-ects">6</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB224</td><td class="c-name">Intelligence artificielle et optimisation</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB231</td><td class="c-name">Systèmes d'exploitation</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB233</td><td class="c-name">Méthodes de programmation</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB234</td><td class="c-name">Conception et programmation orientée objet</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB236</td><td class="c-name">Projet de programmation</td><td class="c-ects">3</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB237</td><td class="c-name">Algorithmique</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b2" data-hidden="true"><td class="c-code">INFOB240</td><td class="c-name">Initiation à l'autoapprentissage (MOOC)</td><td class="c-ects">3</td></tr>
+            <tr id="expand-b2"><td colspan="3" style="padding:0"><button class="expand-btn" onclick="expandCourses('b2',14)"><span class="expand-label-en">Show 11 more courses</span><span class="expand-label-fr" style="display:none">Afficher 11 cours de plus</span><svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button></td></tr>
+          </tbody>
+        </table></div>
       </div>
       <div id="sub-b3" class="sub-panel">
-        <div class="courses-table-wrap">
-          <table class="courses-table">
-            <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
-            <tbody>
-              <tr class="course-row" data-panel="b3"><td class="c-code">INFOB238</td><td class="c-name">Technologies Web</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b3"><td class="c-code">INFOB301</td><td class="c-name">Sécurité informatique</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b3"><td class="c-code">INFOB302</td><td class="c-name">Initiation à la démarche scientifique</td><td class="c-ects">7</td></tr>
-              <tr class="course-row" data-panel="b3" data-hidden="true"><td class="c-code">INFOB313</td><td class="c-name">Analyse et Modélisation des SI</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b3" data-hidden="true"><td class="c-code">INFOB314</td><td class="c-name">Syntaxe et sémantique des langages</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b3" data-hidden="true"><td class="c-code">INFOB315</td><td class="c-name">Télécommunications et réseaux</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b3" data-hidden="true"><td class="c-code">INFOB316</td><td class="c-name">Programmation fonctionnelle et logique</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b3" data-hidden="true"><td class="c-code">INFOB317</td><td class="c-name">IA et programmation symbolique</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b3" data-hidden="true"><td class="c-code">INFOB318</td><td class="c-name">Projet individuel</td><td class="c-ects">10</td></tr>
-              <tr class="course-row" data-panel="b3" data-hidden="true"><td class="c-code">INFOB319</td><td class="c-name">Interaction humain-machine</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="b3" data-hidden="true"><td class="c-code">INFOB331</td><td class="c-name">Théorie des organisations</td><td class="c-ects">—</td></tr>
-              <tr id="expand-b3"><td colspan="3" style="padding:0">
-                <button class="expand-btn" onclick="expandCourses('b3', 11)">
-                  <span class="expand-label-en">Show 8 more courses</span>
-                  <span class="expand-label-fr" style="display:none">Afficher 8 cours de plus</span>
-                  <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </button>
-              </td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="courses-table-wrap"><table class="courses-table">
+          <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
+          <tbody>
+            <tr class="course-row" data-panel="b3"><td class="c-code">INFOB238</td><td class="c-name">Technologies Web</td><td class="c-ects">5</td></tr>
+            <tr class="course-row" data-panel="b3"><td class="c-code">INFOB301</td><td class="c-name">Sécurité informatique</td><td class="c-ects">5</td></tr>
+            <tr class="course-row" data-panel="b3"><td class="c-code">INFOB302</td><td class="c-name">Initiation à la démarche scientifique</td><td class="c-ects">7</td></tr>
+            <tr class="course-row course-hidden" data-panel="b3" data-hidden="true"><td class="c-code">INFOB313</td><td class="c-name">Analyse et Modélisation des SI</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b3" data-hidden="true"><td class="c-code">INFOB314</td><td class="c-name">Syntaxe et sémantique des langages</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b3" data-hidden="true"><td class="c-code">INFOB315</td><td class="c-name">Télécommunications et réseaux</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b3" data-hidden="true"><td class="c-code">INFOB316</td><td class="c-name">Programmation fonctionnelle et logique</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b3" data-hidden="true"><td class="c-code">INFOB317</td><td class="c-name">IA et programmation symbolique</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b3" data-hidden="true"><td class="c-code">INFOB318</td><td class="c-name">Projet individuel</td><td class="c-ects">10</td></tr>
+            <tr class="course-row course-hidden" data-panel="b3" data-hidden="true"><td class="c-code">INFOB319</td><td class="c-name">Interaction humain-machine</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="b3" data-hidden="true"><td class="c-code">INFOB331</td><td class="c-name">Théorie des organisations</td><td class="c-ects">—</td></tr>
+            <tr id="expand-b3"><td colspan="3" style="padding:0"><button class="expand-btn" onclick="expandCourses('b3',11)"><span class="expand-label-en">Show 8 more courses</span><span class="expand-label-fr" style="display:none">Afficher 8 cours de plus</span><svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button></td></tr>
+          </tbody>
+        </table></div>
       </div>
     </div>
     <!-- MASTER -->
@@ -265,55 +234,39 @@
         <button class="sub-btn" data-sub="m2">Master 2</button>
       </div>
       <div id="sub-m1" class="sub-panel active">
-        <div class="courses-table-wrap">
-          <table class="courses-table">
-            <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
-            <tbody>
-              <tr class="course-row" data-panel="m1"><td class="c-code">EDASM101</td><td class="c-name">Business Intelligence</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m1"><td class="c-code">IDASM101</td><td class="c-name">Big data : ingénierie et traitement</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m1"><td class="c-code">IDASM102</td><td class="c-name">Machine learning et data mining</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m1" data-hidden="true"><td class="c-code">IDASM103</td><td class="c-name">Visualisation de l'information</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m1" data-hidden="true"><td class="c-code">IDASM104</td><td class="c-name">Projet en data analytics</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m1" data-hidden="true"><td class="c-code">INFOM112</td><td class="c-name">Ingénierie des architectures logicielles</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m1" data-hidden="true"><td class="c-code">INFOM113</td><td class="c-name">Calculabilité et complexité</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m1" data-hidden="true"><td class="c-code">INFOM114</td><td class="c-name">Génie logiciel</td><td class="c-ects">10</td></tr>
-              <tr class="course-row" data-panel="m1" data-hidden="true"><td class="c-code">SDASM101</td><td class="c-name">Graph mining</td><td class="c-ects">—</td></tr>
-              <tr id="expand-m1"><td colspan="3" style="padding:0">
-                <button class="expand-btn" onclick="expandCourses('m1', 9)">
-                  <span class="expand-label-en">Show 6 more courses</span>
-                  <span class="expand-label-fr" style="display:none">Afficher 6 cours de plus</span>
-                  <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </button>
-              </td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="courses-table-wrap"><table class="courses-table">
+          <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
+          <tbody>
+            <tr class="course-row" data-panel="m1"><td class="c-code">EDASM101</td><td class="c-name">Business Intelligence</td><td class="c-ects">5</td></tr>
+            <tr class="course-row" data-panel="m1"><td class="c-code">IDASM101</td><td class="c-name">Big data : ingénierie et traitement</td><td class="c-ects">5</td></tr>
+            <tr class="course-row" data-panel="m1"><td class="c-code">IDASM102</td><td class="c-name">Machine learning et data mining</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m1" data-hidden="true"><td class="c-code">IDASM103</td><td class="c-name">Visualisation de l'information</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m1" data-hidden="true"><td class="c-code">IDASM104</td><td class="c-name">Projet en data analytics</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m1" data-hidden="true"><td class="c-code">INFOM112</td><td class="c-name">Ingénierie des architectures logicielles</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m1" data-hidden="true"><td class="c-code">INFOM113</td><td class="c-name">Calculabilité et complexité</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m1" data-hidden="true"><td class="c-code">INFOM114</td><td class="c-name">Génie logiciel</td><td class="c-ects">10</td></tr>
+            <tr class="course-row course-hidden" data-panel="m1" data-hidden="true"><td class="c-code">SDASM101</td><td class="c-name">Graph mining</td><td class="c-ects">—</td></tr>
+            <tr id="expand-m1"><td colspan="3" style="padding:0"><button class="expand-btn" onclick="expandCourses('m1',9)"><span class="expand-label-en">Show 6 more courses</span><span class="expand-label-fr" style="display:none">Afficher 6 cours de plus</span><svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button></td></tr>
+          </tbody>
+        </table></div>
       </div>
       <div id="sub-m2" class="sub-panel">
-        <div class="courses-table-wrap">
-          <table class="courses-table">
-            <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
-            <tbody>
-              <tr class="course-row" data-panel="m2"><td class="c-code">IDASM2xx</td><td class="c-name">Data analysis for cybersecurity</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m2"><td class="c-code">IDASM211</td><td class="c-name">Actualités en data science</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m2"><td class="c-code">INFOM119</td><td class="c-name">Cryptographie et Réseaux Anonymes</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m2" data-hidden="true"><td class="c-code">INFOM121</td><td class="c-name">Éthique du numérique</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m2" data-hidden="true"><td class="c-code">INFOM124</td><td class="c-name">Vérification et validation logicielle</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m2" data-hidden="true"><td class="c-code">INFOM217</td><td class="c-name">Mémoire et stage</td><td class="c-ects">25</td></tr>
-              <tr class="course-row" data-panel="m2" data-hidden="true"><td class="c-code">INFOM227</td><td class="c-name">Program analysis for cybersecurity</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m2" data-hidden="true"><td class="c-code">INFOM231</td><td class="c-name">Systèmes autonomes bio-inspirés</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m2" data-hidden="true"><td class="c-code">INFOM232</td><td class="c-name">Deep learning et ML avancé</td><td class="c-ects">5</td></tr>
-              <tr class="course-row" data-panel="m2" data-hidden="true"><td class="c-code">INFOM233</td><td class="c-name">Natural language processing</td><td class="c-ects">—</td></tr>
-              <tr id="expand-m2"><td colspan="3" style="padding:0">
-                <button class="expand-btn" onclick="expandCourses('m2', 10)">
-                  <span class="expand-label-en">Show 7 more courses</span>
-                  <span class="expand-label-fr" style="display:none">Afficher 7 cours de plus</span>
-                  <svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </button>
-              </td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="courses-table-wrap"><table class="courses-table">
+          <thead><tr><th>Code</th><th>Course</th><th style="text-align:center">ECTS</th></tr></thead>
+          <tbody>
+            <tr class="course-row" data-panel="m2"><td class="c-code">IDASM2xx</td><td class="c-name">Data analysis for cybersecurity</td><td class="c-ects">5</td></tr>
+            <tr class="course-row" data-panel="m2"><td class="c-code">IDASM211</td><td class="c-name">Actualités en data science</td><td class="c-ects">5</td></tr>
+            <tr class="course-row" data-panel="m2"><td class="c-code">INFOM119</td><td class="c-name">Cryptographie et Réseaux Anonymes</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m2" data-hidden="true"><td class="c-code">INFOM121</td><td class="c-name">Éthique du numérique</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m2" data-hidden="true"><td class="c-code">INFOM124</td><td class="c-name">Vérification et validation logicielle</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m2" data-hidden="true"><td class="c-code">INFOM217</td><td class="c-name">Mémoire et stage</td><td class="c-ects">25</td></tr>
+            <tr class="course-row course-hidden" data-panel="m2" data-hidden="true"><td class="c-code">INFOM227</td><td class="c-name">Program analysis for cybersecurity</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m2" data-hidden="true"><td class="c-code">INFOM231</td><td class="c-name">Systèmes autonomes bio-inspirés</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m2" data-hidden="true"><td class="c-code">INFOM232</td><td class="c-name">Deep learning et ML avancé</td><td class="c-ects">5</td></tr>
+            <tr class="course-row course-hidden" data-panel="m2" data-hidden="true"><td class="c-code">INFOM233</td><td class="c-name">Natural language processing</td><td class="c-ects">—</td></tr>
+            <tr id="expand-m2"><td colspan="3" style="padding:0"><button class="expand-btn" onclick="expandCourses('m2',10)"><span class="expand-label-en">Show 7 more courses</span><span class="expand-label-fr" style="display:none">Afficher 7 cours de plus</span><svg class="expand-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button></td></tr>
+          </tbody>
+        </table></div>
       </div>
     </div>
   </div>
@@ -335,83 +288,28 @@
     <div id="ptab-academic" class="proj-panel active">
       <div class="projects-grid">
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon blue">🌐</div>
-            <div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">BACHELOR · INFOB238 — TECHNOLOGIES WEB</div>
-            <div class="proj-title">Web Application Project</div>
-            <p class="proj-desc">Full-stack web application developed as part of the Technologies Web course, applying modern front-end and back-end frameworks.</p>
-            <div class="proj-stack"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Node.js</span></div>
-          </div>
+          <div class="proj-header"><div class="proj-icon blue">🌐</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">BACHELOR · INFOB238 — TECHNOLOGIES WEB</div><div class="proj-title">Web Application Project</div><p class="proj-desc">Full-stack web application developed as part of the Technologies Web course, applying modern front-end and back-end frameworks.</p><div class="proj-stack"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Node.js</span></div></div>
         </div>
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon purple">🤖</div>
-            <div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">BACHELOR 2024 · INFOB314 — SYNTAXE & SÉMANTIQUE</div>
-            <div class="proj-title">Emoji-to-Python Compiler</div>
-            <p class="proj-desc">Built a compiler that converts an emoji-based programming language into Python code using ANTLR for lexical and syntactic analysis. Applied to control a micro-robot.</p>
-            <div class="proj-stack"><span class="pill">Java</span><span class="pill">ANTLR</span><span class="pill">Python</span><span class="pill">Compiler</span></div>
-          </div>
+          <div class="proj-header"><div class="proj-icon purple">🤖</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">BACHELOR 2024 · INFOB314 — SYNTAXE & SÉMANTIQUE</div><div class="proj-title">Emoji-to-Python Compiler</div><p class="proj-desc">Built a compiler that converts an emoji-based programming language into Python code using ANTLR for lexical and syntactic analysis. Applied to control a micro-robot.</p><div class="proj-stack"><span class="pill">Java</span><span class="pill">ANTLR</span><span class="pill">Python</span><span class="pill">Compiler</span></div></div>
         </div>
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon teal">🧪</div>
-            <div class="proj-links">
-              <a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">BACHELOR · INFOB240 — MOOC · SOFTWARE TESTING</div>
-            <div class="proj-title">MOOC — Software Testing & Sudoku Solver</div>
-            <p class="proj-desc">Implemented a fully functional Sudoku solver and applied a complete software testing methodology: unit tests, boundary value analysis, equivalence partitioning, and performance benchmarks to validate correctness and robustness across difficulty levels.</p>
-            <div class="proj-stack">
-              <span class="pill">Python</span>
-              <span class="pill">Unit Testing</span>
-              <span class="pill">Pytest</span>
-              <span class="pill">Algorithms</span>
-            </div>
-          </div>
+          <div class="proj-header"><div class="proj-icon teal">🧪</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">BACHELOR · INFOB240 — MOOC · SOFTWARE TESTING</div><div class="proj-title">MOOC — Software Testing & Sudoku Solver</div><p class="proj-desc">Implemented a fully functional Sudoku solver and applied a complete software testing methodology: unit tests, boundary value analysis, equivalence partitioning, and performance benchmarks to validate correctness and robustness across difficulty levels.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Unit Testing</span><span class="pill">Pytest</span><span class="pill">Algorithms</span></div></div>
         </div>
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon green">👗</div>
-            <div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">BACHELOR 2024 · INFOB318 — PROJET INDIVIDUEL</div>
-            <div class="proj-title">Clothed — Clothing Donation Platform</div>
-            <p class="proj-desc">Web application facilitating clothing donations with an intuitive interface to offer and search for items. Focused on UX and efficient donation management.</p>
-            <div class="proj-stack"><span class="pill">Angular</span><span class="pill">TypeScript</span><span class="pill">UX Design</span></div>
-          </div>
+          <div class="proj-header"><div class="proj-icon green">👗</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">BACHELOR 2024 · INFOB318 — PROJET INDIVIDUEL</div><div class="proj-title">Clothed — Clothing Donation Platform</div><p class="proj-desc">Web application facilitating clothing donations with an intuitive interface to offer and search for items. Focused on UX and efficient donation management.</p><div class="proj-stack"><span class="pill">Angular</span><span class="pill">TypeScript</span><span class="pill">UX Design</span></div></div>
         </div>
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon teal">🗺️</div>
-            <div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">MASTER 2025 · IDASM104 — PROJET DATA ANALYTICS</div>
-            <div class="proj-title">Seekr — Cultural Exploration App</div>
-            <p class="proj-desc">Web app for cultural exploration using open data from Namur. Clustering and graph algorithms optimize art route planning with interactive geolocation experiences.</p>
-            <div class="proj-stack"><span class="pill">Python</span><span class="pill">Folium</span><span class="pill">Mapbox</span><span class="pill">scikit-learn</span></div>
-          </div>
+          <div class="proj-header"><div class="proj-icon teal">🗺️</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">MASTER 2025 · IDASM104 — PROJET DATA ANALYTICS</div><div class="proj-title">Seekr — Cultural Exploration App</div><p class="proj-desc">Web app for cultural exploration using open data from Namur. Clustering and graph algorithms optimize art route planning with interactive geolocation experiences.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Folium</span><span class="pill">Mapbox</span><span class="pill">scikit-learn</span></div></div>
         </div>
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon purple">🔭</div>
-            <div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">MASTER 2026 · INFOM232 — DEEP LEARNING</div>
-            <div class="proj-title">Galaxy Classification — Neural Networks</div>
-            <p class="proj-desc">Automatic classification of galaxies into 10 categories using CNNs trained on 15K images. Full pipeline: data exploration, preprocessing, model architecture (PyTorch), hyperparameter tuning, and Kaggle leaderboard submission.</p>
-            <div class="proj-stack"><span class="pill">PyTorch</span><span class="pill">CNN</span><span class="pill">Kaggle</span><span class="pill">Python</span><span class="pill">Google Colab</span></div>
-          </div>
+          <div class="proj-header"><div class="proj-icon purple">🔭</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">MASTER 2026 · INFOM232 — DEEP LEARNING</div><div class="proj-title">Galaxy Classification — Neural Networks</div><p class="proj-desc">Automatic classification of galaxies into 10 categories using CNNs trained on 15K images. Full pipeline: data exploration, preprocessing, model architecture (PyTorch), hyperparameter tuning, and Kaggle leaderboard submission.</p><div class="proj-stack"><span class="pill">PyTorch</span><span class="pill">CNN</span><span class="pill">Kaggle</span><span class="pill">Python</span><span class="pill">Google Colab</span></div></div>
         </div>
       </div>
     </div>
@@ -420,28 +318,12 @@
     <div id="ptab-professional" class="proj-panel">
       <div class="projects-grid">
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon orange">⚡</div>
-            <div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">FEB 2025 — JUN 2025 · UNIVERSITÉ DE NAMUR</div>
-            <div class="proj-title">Elia Energy Dashboard</div>
-            <p class="proj-desc">ETL pipeline on wind and solar energy data from Elia using SSIS. Built an interactive Power BI dashboard for energy performance visualization and operational decision-making.</p>
-            <div class="proj-stack"><span class="pill">Power BI</span><span class="pill">SQL</span><span class="pill">SSIS</span><span class="pill">ETL</span></div>
-          </div>
+          <div class="proj-header"><div class="proj-icon orange">⚡</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">FEB 2025 — JUN 2025 · UNIVERSITÉ DE NAMUR</div><div class="proj-title">Elia Energy Dashboard</div><p class="proj-desc">ETL pipeline on wind and solar energy data from Elia using SSIS. Built an interactive Power BI dashboard for energy performance visualization and operational decision-making.</p><div class="proj-stack"><span class="pill">Power BI</span><span class="pill">SQL</span><span class="pill">SSIS</span><span class="pill">ETL</span></div></div>
         </div>
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon blue">🌐</div>
-            <div class="proj-links"></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">FEB 2025 — JUN 2025 · HMS NETWORKS · BELGIUM</div>
-            <div class="proj-title">Multilingual Translation System</div>
-            <p class="proj-desc">Collaborated with HMS Networks to design a multilingual back-office for marketing teams. Implemented i18n tag management, integrated the Lokalize API to automate translation workflows, and worked in Agile sprints tracked via Jira.</p>
-            <div class="proj-stack"><span class="pill">i18n</span><span class="pill">Lokalize API</span><span class="pill">Jira</span><span class="pill">Agile</span><span class="pill">Back-office</span></div>
-          </div>
+          <div class="proj-header"><div class="proj-icon blue">🌐</div><div class="proj-links"></div></div>
+          <div class="proj-body"><div class="proj-year">FEB 2025 — JUN 2025 · HMS NETWORKS · BELGIUM</div><div class="proj-title">Multilingual Translation System</div><p class="proj-desc">Collaborated with HMS Networks to design a multilingual back-office for marketing teams. Implemented i18n tag management, integrated the Lokalize API to automate translation workflows, and worked in Agile sprints tracked via Jira.</p><div class="proj-stack"><span class="pill">i18n</span><span class="pill">Lokalize API</span><span class="pill">Jira</span><span class="pill">Agile</span><span class="pill">Back-office</span></div></div>
         </div>
       </div>
     </div>
@@ -449,78 +331,21 @@
     <!-- PERSONAL -->
     <div id="ptab-personal" class="proj-panel">
       <div class="projects-grid">
-
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon orange">🏠</div>
-            <div class="proj-links">
-              <a href="https://github.com/YoussefFiher/house_prices" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-              <a href="https://github.com/YoussefFiher/house_prices" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">PERSONAL PROJECT · REGRESSION · STREAMLIT</div>
-            <div class="proj-title">House Prices Prediction</div>
-            <p class="proj-desc">End-to-end ML pipeline predicting house prices in Ames, Iowa. Data cleaning, feature engineering, log-transform of target variable, then Ridge Regression vs XGBoost comparison. Models evaluated with RMSE & R², deployed in an interactive Streamlit app via joblib.</p>
-            <div class="proj-stack">
-              <span class="pill">Python</span>
-              <span class="pill">XGBoost</span>
-              <span class="pill">Ridge</span>
-              <span class="pill">Streamlit</span>
-              <span class="pill">scikit-learn</span>
-              <span class="pill">Feature Eng.</span>
-            </div>
-          </div>
+          <div class="proj-header"><div class="proj-icon orange">🏠</div><div class="proj-links"><a href="https://github.com/YoussefFiher/house_prices" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://github.com/YoussefFiher/house_prices" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">PERSONAL PROJECT · REGRESSION · STREAMLIT</div><div class="proj-title">House Prices Prediction</div><p class="proj-desc">End-to-end ML pipeline predicting house prices in Ames, Iowa. Data cleaning, feature engineering, log-transform of target variable, then Ridge Regression vs XGBoost comparison. Models evaluated with RMSE & R², deployed in an interactive Streamlit app via joblib.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">XGBoost</span><span class="pill">Ridge</span><span class="pill">Streamlit</span><span class="pill">scikit-learn</span><span class="pill">Feature Eng.</span></div></div>
         </div>
-
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon purple">🎬</div>
-            <div class="proj-links">
-              <a href="https://github.com/YoussefFiher/Netflix-Analysis" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-              <a href="https://github.com/YoussefFiher/Netflix-Analysis" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">PERSONAL PROJECT · EDA · STREAMLIT</div>
-            <div class="proj-title">Netflix Data Analysis & Visualization</div>
-            <p class="proj-desc">Exploratory analysis of Netflix titles dataset with Pandas. Cleans raw data, engineers date/category features, then surfaces insights — movies vs shows distribution, content evolution, popular genres & countries, ratings — through an interactive Streamlit dashboard.</p>
-            <div class="proj-stack">
-              <span class="pill">Python</span>
-              <span class="pill">Pandas</span>
-              <span class="pill">Seaborn</span>
-              <span class="pill">Streamlit</span>
-              <span class="pill">EDA</span>
-            </div>
-          </div>
+          <div class="proj-header"><div class="proj-icon purple">🎬</div><div class="proj-links"><a href="https://github.com/YoussefFiher/Netflix-Analysis" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://github.com/YoussefFiher/Netflix-Analysis" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">PERSONAL PROJECT · EDA · STREAMLIT</div><div class="proj-title">Netflix Data Analysis & Visualization</div><p class="proj-desc">Exploratory analysis of Netflix titles dataset with Pandas. Cleans raw data, engineers date/category features, then surfaces insights — movies vs shows distribution, content evolution, popular genres & countries, ratings — through an interactive Streamlit dashboard.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">Seaborn</span><span class="pill">Streamlit</span><span class="pill">EDA</span></div></div>
         </div>
-
         <div class="proj-card reveal">
-          <div class="proj-header">
-            <div class="proj-icon teal">🔍</div>
-            <div class="proj-links">
-              <a href="https://github.com/YoussefFiher/Fraudsters_detection_revolut" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-              <a href="https://github.com/YoussefFiher/Fraudsters_detection_revolut" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-year">PERSONAL PROJECT · CLASSIFICATION · REVOLUT CHALLENGE</div>
-            <div class="proj-title">Fraudsters Detection — Revolut</div>
-            <p class="proj-desc">Take-home assignment inspired by Revolut's recruitment process. Explores fictional banking data (users, transactions, currencies) to detect fraudulent behavior. Feature engineering on transactional patterns, then Logistic Regression vs Random Forest vs Gradient Boosting compared by Accuracy, Precision, Recall, F1 & ROC-AUC. Streamlit app with prediction & visualization pages.</p>
-            <div class="proj-stack">
-              <span class="pill">Python</span>
-              <span class="pill">Gradient Boosting</span>
-              <span class="pill">Random Forest</span>
-              <span class="pill">Streamlit</span>
-              <span class="pill">ROC-AUC</span>
-              <span class="pill">Feature Eng.</span>
-            </div>
-          </div>
+          <div class="proj-header"><div class="proj-icon teal">🔍</div><div class="proj-links"><a href="https://github.com/YoussefFiher/Fraudsters_detection_revolut" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><a href="https://github.com/YoussefFiher/Fraudsters_detection_revolut" target="_blank" class="proj-link" title="Live"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+          <div class="proj-body"><div class="proj-year">PERSONAL PROJECT · CLASSIFICATION · REVOLUT CHALLENGE</div><div class="proj-title">Fraudsters Detection — Revolut</div><p class="proj-desc">Take-home assignment inspired by Revolut's recruitment process. Explores fictional banking data (users, transactions, currencies) to detect fraudulent behavior. Feature engineering on transactional patterns, then Logistic Regression vs Random Forest vs Gradient Boosting compared by Accuracy, Precision, Recall, F1 & ROC-AUC. Streamlit app with prediction & visualization pages.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Gradient Boosting</span><span class="pill">Random Forest</span><span class="pill">Streamlit</span><span class="pill">ROC-AUC</span><span class="pill">Feature Eng.</span></div></div>
         </div>
-
       </div>
     </div>
-</div>
+  </div>
 </section>
 
 <!-- CERTIFICATIONS -->
@@ -530,71 +355,42 @@
     <div class="divider"></div>
     <h2 class="section-title">Certifications</h2>
     <div class="certs-grid">
-
-      <!-- IBM / Coursera: Supervised ML Regression -->
       <div class="cert-card reveal">
         <div class="cert-icon">📈</div>
         <div class="cert-body">
           <div class="cert-title">Supervised Machine Learning: Regression</div>
           <div class="cert-issuer">IBM · Coursera</div>
           <div class="cert-date">Oct 2024</div>
-          <div class="cert-actions">
-            <a href="https://coursera.org/verify/OX5I5QDK2HZG" target="_blank" class="cert-btn cert-btn-verify">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Verify
-            </a>
-          </div>
+          <div class="cert-actions"><a href="https://coursera.org/verify/OX5I5QDK2HZG" target="_blank" class="cert-btn cert-btn-verify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Verify</a></div>
         </div>
       </div>
-
-      <!-- IBM / Coursera: Intro to Software Engineering -->
       <div class="cert-card reveal">
         <div class="cert-icon">⚙️</div>
         <div class="cert-body">
           <div class="cert-title">Introduction to Software Engineering</div>
           <div class="cert-issuer">IBM · Coursera</div>
           <div class="cert-date">Oct 2024</div>
-          <div class="cert-actions">
-            <a href="https://coursera.org/verify/QRWXYYMXQVEU" target="_blank" class="cert-btn cert-btn-verify">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Verify
-            </a>
-          </div>
+          <div class="cert-actions"><a href="https://coursera.org/verify/QRWXYYMXQVEU" target="_blank" class="cert-btn cert-btn-verify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Verify</a></div>
         </div>
       </div>
-
-      <!-- IBM / Coursera: Django -->
       <div class="cert-card reveal">
         <div class="cert-icon">🌐</div>
         <div class="cert-body">
           <div class="cert-title">Django Application Development with SQL and Databases</div>
           <div class="cert-issuer">IBM · Coursera</div>
           <div class="cert-date">Oct 2024</div>
-          <div class="cert-actions">
-            <a href="https://coursera.org/verify/BFWONPGOONL4" target="_blank" class="cert-btn cert-btn-verify">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Verify
-            </a>
-          </div>
+          <div class="cert-actions"><a href="https://coursera.org/verify/BFWONPGOONL4" target="_blank" class="cert-btn cert-btn-verify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Verify</a></div>
         </div>
       </div>
-
-      <!-- UNamur Bachelor -->
       <div class="cert-card reveal cert-card-featured">
         <div class="cert-icon">🎓</div>
         <div class="cert-body">
           <div class="cert-title">Bachelier en Sciences Informatiques</div>
           <div class="cert-issuer">Université de Namur</div>
           <div class="cert-date">27 Juin 2025 · Mention : Satisfaction</div>
-          <div class="cert-actions">
-            <a href="attestation_reussite.pdf" download="Attestation_Bachelier_Youssef_FIHER.pdf" class="cert-btn cert-btn-download">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download
-            </a>
-          </div>
+          <div class="cert-actions"><a href="attestation_reussite.pdf" download="Attestation_Bachelier_Youssef_FIHER.pdf" class="cert-btn cert-btn-download"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</a></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -614,7 +410,7 @@
         <div class="contact-item"><div class="contact-item-icon">📱</div><span>+32 466 26 26 30</span></div>
       </div>
       <div class="contact-form reveal">
-        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/xdawpzjb" method="POST">
           <div class="form-row">
             <div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
             <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
@@ -642,8 +438,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
-
+<script src="script.js"></script>
 <script>
 // ── CONTACT FORM (Formspree) ──
 var contactForm = document.getElementById('contact-form');
@@ -669,15 +464,13 @@ if (contactForm) {
         contactForm.reset();
         btnText.textContent = 'Send Message';
         btn.disabled = false;
-      } else {
-        throw new Error('Network response was not ok');
-      }
+      } else { throw new Error('err'); }
     }).catch(function() {
       status.style.display = 'block';
       status.style.background = 'rgba(239,68,68,.1)';
       status.style.border = '1px solid rgba(239,68,68,.3)';
       status.style.color = '#ef4444';
-      status.textContent = '✗ Something went wrong. Please email me directly at youssef.fiher.6@gmail.com';
+      status.textContent = '✗ Something went wrong. Please email me at youssef.fiher.6@gmail.com';
       btnText.textContent = 'Send Message';
       btn.disabled = false;
     });

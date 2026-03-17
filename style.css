@@ -311,3 +311,14 @@ footer{position:relative;z-index:2;padding:36px 5%;border-top:1px solid var(--bo
   .certs-grid{grid-template-columns:1fr}
   #certifications{padding:60px 4%}
 }
+
+
+/* ── COURSES: prevent hidden panels from affecting layout ── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.sub-panel { display: none; }
+.sub-panel.active { display: block; }
+@media (max-width: 768px) {
+  #courses { padding-bottom: 50px !important; }
+  #courses .section-title { margin-bottom: 24px; }
+}

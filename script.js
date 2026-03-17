@@ -6,12 +6,20 @@ function expandCourses(panelId, total) {
   var rows = document.querySelectorAll('.course-row[data-panel="' + panelId + '"]');
   var isExpanded = btn.classList.contains('expanded');
   if (!isExpanded) {
-    rows.forEach(function(r) { r.removeAttribute('data-hidden'); });
+    rows.forEach(function(r) {
+      r.removeAttribute('data-hidden');
+      r.classList.remove('course-hidden');
+    });
     btn.classList.add('expanded');
     btn.querySelector('.expand-label-en').textContent = 'Show less';
     btn.querySelector('.expand-label-fr').textContent = 'Réduire';
   } else {
-    rows.forEach(function(r, i) { if (i >= 3) r.setAttribute('data-hidden','true'); });
+    rows.forEach(function(r, i) {
+      if (i >= 3) {
+        r.setAttribute('data-hidden','true');
+        r.classList.add('course-hidden');
+      }
+    });
     btn.classList.remove('expanded');
     var remaining = total - 3;
     btn.querySelector('.expand-label-en').textContent = 'Show ' + remaining + ' more courses';
