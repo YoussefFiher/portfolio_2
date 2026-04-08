@@ -44,6 +44,56 @@
 }
 </style>
 </head>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="video-modal-overlay" onclick="closeVideoModal(event)">
+  <div class="video-modal">
+    <button class="video-modal-close" onclick="closeVideoModal(event)" title="Close">&times;</button>
+    <div class="video-modal-header">
+      <span class="video-modal-badge">DEMO</span>
+      <h3 class="video-modal-title">Seekr — Cultural Exploration App</h3>
+    </div>
+    <div class="video-modal-content">
+      <video id="seekrVideo" controls>
+      <source src="seekr-demo.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<script>
+function openVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('seekrVideo');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  video.play();
+}
+function closeVideoModal(e) {
+  if (e) e.stopPropagation();
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('seekrVideo');
+  if (e && e.target !== modal && !e.target.classList.contains('video-modal-close')) return;
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  video.pause();
+  video.currentTime = 0;
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('videoModal');
+    if (modal.classList.contains('active')) {
+      const video = document.getElementById('seekrVideo');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
+});
+</script>
+
+
 <body>
 
 <canvas id="particles-canvas"></canvas>
@@ -371,7 +421,7 @@
           <div class="proj-body"><div class="proj-year">BACHELOR 2024 · INFOB318 — PROJET INDIVIDUEL</div><div class="proj-title">Clothed — Clothing Donation Platform</div><p class="proj-desc">Web application facilitating clothing donations with an intuitive interface to offer and search for items. Focused on UX and efficient donation management.</p><div class="proj-stack"><span class="pill">Angular</span><span class="pill">TypeScript</span><span class="pill">UX Design</span></div></div>
         </div>
         <div class="proj-card reveal">
-          <div class="proj-header"><div class="proj-icon teal">🗺️</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-header"><div class="proj-icon teal">🗺️</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openVideoModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
           <div class="proj-body"><div class="proj-year">MASTER 2025 · IDASM104 — PROJET DATA ANALYTICS</div><div class="proj-title">Seekr — Cultural Exploration App</div><p class="proj-desc">Web app for cultural exploration using open data from Namur. Clustering and graph algorithms optimize art route planning with interactive geolocation experiences.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Folium</span><span class="pill">Mapbox</span><span class="pill">scikit-learn</span></div></div>
         </div>
         <div class="proj-card reveal">
