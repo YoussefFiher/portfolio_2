@@ -93,6 +93,54 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
+<!-- CNN VIDEO MODAL -->
+<div id="cnnModal" class="video-modal-overlay" onclick="closeCnnModal(event)">
+  <div class="video-modal">
+    <button class="video-modal-close" onclick="closeCnnModal(event)" title="Close">&times;</button>
+    <div class="video-modal-header">
+      <span class="video-modal-badge">DEMO</span>
+      <h3 class="video-modal-title">Galaxy Classification — Neural Networks</h3>
+    </div>
+    <div class="video-modal-content">
+      <video id="cnnVideo" controls>
+        <source src="CNN.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<script>
+function openCnnModal() {
+  const modal = document.getElementById('cnnModal');
+  const video = document.getElementById('cnnVideo');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  video.play();
+}
+function closeCnnModal(e) {
+  if (e) e.stopPropagation();
+  const modal = document.getElementById('cnnModal');
+  const video = document.getElementById('cnnVideo');
+  if (e && e.target !== modal && !e.target.classList.contains('video-modal-close')) return;
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  video.pause();
+  video.currentTime = 0;
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('cnnModal');
+    if (modal.classList.contains('active')) {
+      const video = document.getElementById('cnnVideo');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
+});
+</script>
+
 
 <body>
 
@@ -425,7 +473,7 @@ document.addEventListener('keydown', function(e) {
           <div class="proj-body"><div class="proj-year">MASTER 2025 · IDASM104 — PROJET DATA ANALYTICS</div><div class="proj-title">Seekr — Cultural Exploration App</div><p class="proj-desc">Web app for cultural exploration using open data from Namur. Clustering and graph algorithms optimize art route planning with interactive geolocation experiences.</p><div class="proj-stack"><span class="pill">Python</span><span class="pill">Folium</span><span class="pill">Mapbox</span><span class="pill">scikit-learn</span></div></div>
         </div>
         <div class="proj-card reveal">
-          <div class="proj-header"><div class="proj-icon purple">🔭</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div>
+          <div class="proj-header"><div class="proj-icon purple">🔭</div><div class="proj-links"><a href="#" class="proj-link" title="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a><button class="proj-link video-btn" title="Watch Demo Video" onclick="openCnnModal()"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div></div>
           <div class="proj-body"><div class="proj-year">MASTER 2026 · INFOM232 — DEEP LEARNING</div><div class="proj-title">Galaxy Classification — Neural Networks</div><p class="proj-desc">Automatic classification of galaxies into 10 categories using CNNs trained on 15K images. Full pipeline: data exploration, preprocessing, model architecture (PyTorch), hyperparameter tuning, and Kaggle leaderboard submission.</p><div class="proj-stack"><span class="pill">PyTorch</span><span class="pill">CNN</span><span class="pill">Kaggle</span><span class="pill">Python</span><span class="pill">Google Colab</span></div></div>
         </div>
       </div>
