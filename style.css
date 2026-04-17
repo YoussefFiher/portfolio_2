@@ -318,9 +318,45 @@ footer{position:relative;z-index:2;padding:36px 5%;border-top:1px solid var(--bo
 .tab-panel.active { display: block; }
 .sub-panel { display: none; }
 .sub-panel.active { display: block; }
+
 @media (max-width: 768px) {
-  #courses { padding-bottom: 50px !important; }
+  #courses { padding: 60px 4% 50px !important; }
   #courses .section-title { margin-bottom: 24px; }
+  .main-tabs { gap: 6px; margin-bottom: 20px; }
+  .tab-btn { padding: 8px 18px; font-size: 13px; }
+  .sub-tabs { gap: 5px; margin-bottom: 16px; flex-wrap: wrap; }
+  .sub-btn { padding: 5px 12px; font-size: 11px; }
+  .courses-table-wrap { border-radius: 10px; overflow-x: hidden; }
+  .courses-table { width: 100%; table-layout: fixed; }
+  .courses-table thead th { padding: 8px 10px; font-size: 9px; }
+  .courses-table td { padding: 10px 10px; }
+  /* Masquer la colonne code sur mobile */
+  .courses-table thead th:nth-child(1) { display: none; }
+  .courses-table td.c-code { display: none; }
+  /* Colonne cours prend tout l'espace */
+  .courses-table thead th:nth-child(2) { width: auto; }
+  /* Colonne ECTS fixe et petite */
+  .courses-table thead th:nth-child(3) { width: 48px; text-align: center; }
+  .c-name { font-size: 13px; line-height: 1.45; padding-left: 12px !important; }
+  .c-ects { font-size: 12px; text-align: center; padding-right: 10px !important; }
+  .expand-btn { font-size: 11px; padding: 11px 12px; }
+  .expand-chevron { width: 12px; height: 12px; }
+}
+
+@media (max-width: 480px) {
+  #courses { padding: 50px 3% 40px !important; }
+  .main-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .tab-btn { font-size: 12px; padding: 8px 10px; text-align: center; justify-content: center; width: 100%; }
+  .sub-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+  .sub-btn { font-size: 10px; padding: 6px 4px; text-align: center; width: 100%; }
+  .courses-table-wrap { border-radius: 8px; }
+  .courses-table thead th:nth-child(1) { display: none; }
+  .courses-table td.c-code { display: none; }
+  .courses-table thead th:nth-child(2) { width: auto; padding-left: 14px; }
+  .courses-table thead th:nth-child(3) { width: 40px; }
+  .c-name { font-size: 12px; padding-left: 14px !important; }
+  .c-ects { font-size: 12px; }
+  .expand-btn { font-size: 10px; padding: 10px 10px; }
 }
 
 /* EXPERIENCE */
